@@ -74,8 +74,6 @@ if (argv['https'] === undefined) {
     httpsServer.listen(__port, function () {
         console.log('HTTPS Server is running at: https://127.0.0.1:%s', __port);
     });
-    //打开链接
-    require('child_process').exec('start ' + "https://127.0.0.1:" + __port);
 }
 
 //允许资源热加载
