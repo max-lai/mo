@@ -43,6 +43,11 @@ app.all('/*', function (req, res) {
         res.end();
     }
 
+    //兼容链接加后缀
+    if (!fs.existsSync(filePath)) {
+        filePath = filePath.replace(/\.[^.]+(\.js)$/i, '$1');
+    }
+
     //判断文件是否存在
     if (!fs.existsSync(filePath)) {
         res.statusCode = 404;
